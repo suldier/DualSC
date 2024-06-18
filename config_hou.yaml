@@ -1,0 +1,32 @@
+# general
+seed: 42 #42
+workers: 0
+dataset_root: "/media/dsk/shujun.liu/dissertation/dualsc/HSI_Datasets/"
+
+# train options
+batch_size: 1000
+
+is_pca: True
+in_channel: 4
+start_epoch1: 0
+start_epoch2: 0
+num_superpixel: 600 # InP 150 Sal 150 PaU 500 Hou 600 
+n_neighbors: 10
+epochs1: 200
+epochs2: 100
+dataset: "Hou" # "InP" "Sal" "PaU" "Hou"
+label: "Unclassified Healthy-grass Stressed-grass Synthetic-grass Trees Soil Water Residential Commercial Road Highway Railway Parking-Lot1 Parking-Lot2 Tennis-Court Running-Track"
+
+# model options
+# feature_dim: 128
+image_size: 1
+model_path:  "save/HSI-SaN"  # "save/HSI-SaN"; "save/HSI-SaA" "save/HSI-PaC"
+reload: False
+#reload: True
+
+# loss options
+learning_rate1: 0.001 #0.001
+weight_decay1: 0.0005 #0.0005
+
+learning_rate2: 0.001 # 0.0001
+weight_decay2: 0.0005 # 0.0005 0.001
