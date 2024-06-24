@@ -45,8 +45,7 @@ class Dataset(Dataset):
         if is_superpixel: 
             self.sp_labels = HSI_to_superpixels(x_pca, num_superpixel=num_superpixel, is_pca=False,
                                                     is_show_superpixel=False)
-            show_superpixel(self.sp_labels, x_pca[:,:,:3])
-            #show_superpixel(self.sp_labels, self.img[:,:,:3])
+            #show_superpixel(self.sp_labels, x_pca[:,:,:3])
             self.association_mat = create_association_mat(self.sp_labels)
             x_sp = np.dot(self.association_mat.T, self.x)
             x_sum = self.association_mat.T.sum(1).reshape((-1, 1))
